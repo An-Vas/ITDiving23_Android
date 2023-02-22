@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="standartMargin">16dp</dimen>
+    <dimen name="halfMargin">8dp</dimen>
+    <dimen name="radius">1dp</dimen>
+    <dimen name="button_height">64dp</dimen>
+    <dimen name="half_button_height">25dp</dimen>
+    <dimen name="button_radius">40dp</dimen>
 </resources>

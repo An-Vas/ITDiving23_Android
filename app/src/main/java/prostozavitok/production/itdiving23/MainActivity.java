@@ -22,7 +22,8 @@ import prostozavitok.production.itdiving23.Handlers.micrButtonOnClickListener;
 import prostozavitok.production.itdiving23.Handlers.smsButtonOnClickListener;
 
 public class MainActivity extends AppCompatActivity {
-    private ImageButton smsButton, contactsButton, viewModeButton, cameraButton, micrButton, handButton, endCallButton;
+    private ImageButton smsButton, contactsButton, viewModeButton, cameraButton, micrButton,
+            handButton, endCallButton, exitArrowButton;
     private Boolean cameraOn = false, micOn = false;
     private LinearLayout scrollLinLayout, inLayout;
     ScrollView scroll;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         inLayout=findViewById(R.id.cardLinearLayout);
         scroll = findViewById(R.id.scrollView2);
         inLayout = findViewById(R.id.cardLinearLayout);
+        exitArrowButton =  findViewById(R.id.exitButton);
 
         cameraButton.setOnClickListener(new cameraButtonOnClickListener(cameraButton, cameraOn));
         micrButton.setOnClickListener(new micrButtonOnClickListener(micrButton, micOn));
@@ -53,5 +55,6 @@ public class MainActivity extends AppCompatActivity {
         contactsButton.setOnClickListener(new contactsButtonOnClickListener(getSupportFragmentManager()));
         viewModeButton.setOnClickListener(new changeShowModeOnClickListener(inLayout, scrollLinLayout, scroll));
         smsButton.setOnClickListener(new smsButtonOnClickListener(this, getPackageManager()));
+        exitArrowButton.setOnClickListener(new exitButtonOnClickListener(this));
     }
 }

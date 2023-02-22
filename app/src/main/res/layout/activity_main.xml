@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,26 +12,26 @@
         android:id="@+id/uparrowLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/dark_gray"
+        android:backgroundTint="@color/dark_dark_gray"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/exitButton"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:backgroundTint="@color/dark_gray"
-            app:srcCompat="@drawable/expand_less_fill0_wght400_grad0_opsz48" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/dark_dark_gray"
+            app:srcCompat="@drawable/baseline_arrow_downward_24"
+            app:tint="@android:color/white" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/upButtonsLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/dark_gray"
+        android:backgroundTint="@color/dark_dark_gray"
         android:orientation="horizontal"
-        android:layout_marginLeft="@dimen/standartMargin"
-        android:layout_marginRight="@dimen/standartMargin"
         app:layout_constraintTop_toBottomOf="@+id/uparrowLayout">
 
         <ImageButton
@@ -38,8 +39,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/baseline_message_24" />
+            android:backgroundTint="@color/dark_dark_gray"
+            android:layout_marginLeft="@dimen/standartMargin"
+            app:srcCompat="@drawable/baseline_message_24"
+            app:tint="@android:color/white" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -53,8 +56,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/baseline_contacts_24" />
+            android:backgroundTint="@color/dark_dark_gray"
+            app:srcCompat="@drawable/baseline_contacts_24"
+            app:tint="@android:color/white"   />
 
         <ImageView
             android:id="@+id/imageView6"
@@ -68,8 +72,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/baseline_burst_mode_24" />
+            android:backgroundTint="@color/dark_dark_gray"
+            android:layout_marginRight="@dimen/standartMargin"
+            app:srcCompat="@drawable/baseline_burst_mode_24"
+            app:tint="@android:color/white" />
 
     </LinearLayout>
 
@@ -77,10 +83,10 @@
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginLeft="@dimen/standartMargin"
-        android:layout_marginRight="@dimen/standartMargin"
         app:layout_constraintBottom_toTopOf="@+id/downButtonsLayout"
-        app:layout_constraintTop_toBottomOf="@+id/upButtonsLayout">
+        app:layout_constraintTop_toBottomOf="@+id/upButtonsLayout"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="44dp">
 
         <LinearLayout
             android:id="@+id/callParticipantsLinLayout"
@@ -101,67 +107,99 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 tools:visibility="visible" />
+
+            <include
+                layout="@layout/contact_video_card"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:visibility="visible" />
+
+            <include
+                layout="@layout/contact_video_card"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:visibility="visible" />
+
+
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/downButtonsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/dark_gray"
-        android:foregroundGravity="bottom"
-        android:gravity="bottom|end"
-        android:orientation="horizontal"
-        android:layout_marginLeft="@dimen/standartMargin"
-        android:layout_marginRight="@dimen/standartMargin"
+        android:layout_weight="1"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="invisible" />
-
-        <ImageButton
-            android:id="@+id/cameraButton"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/baseline_videocam_off_24" />
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
-            android:id="@+id/microphoneButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            app:srcCompat="@drawable/baseline_mic_off_24" />
+            <ImageButton
+                android:id="@+id/cameraButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/white"
+                android:layout_marginLeft="@dimen/halfMargin"
+                android:layout_marginRight="@dimen/halfMargin"
+                android:layout_marginTop="@dimen/halfMargin"
+                android:layout_marginEnd="@dimen/halfMargin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/baseline_videocam_off_24" />
 
-        <ImageButton
-            android:id="@+id/handButtton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/gray"
-            app:srcCompat="@drawable/baseline_back_hand_24" />
 
-        <ImageButton
-            android:id="@+id/callEndButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/red"
-            app:srcCompat="@drawable/baseline_call_end_24" />
+            <ImageButton
+                android:id="@+id/microphoneButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/white"
+                android:layout_marginLeft="@dimen/halfMargin"
+                android:layout_marginRight="@dimen/halfMargin"
+                android:layout_marginTop="@dimen/halfMargin"
+                android:layout_marginEnd="@dimen/halfMargin"
+                app:srcCompat="@drawable/baseline_mic_off_24" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="invisible" />
+            <ImageButton
+                android:id="@+id/handButtton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/dark_gray"
+                android:layout_marginLeft="@dimen/halfMargin"
+                android:layout_marginRight="@dimen/halfMargin"
+                android:layout_marginTop="@dimen/halfMargin"
+                android:layout_marginEnd="@dimen/halfMargin"
+                app:srcCompat="@drawable/baseline_back_hand_24"
+                app:tint="@android:color/white" />
 
-    </LinearLayout>
+            <ImageButton
+                android:id="@+id/callEndButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/red"
+                android:layout_marginLeft="@dimen/halfMargin"
+                android:layout_marginRight="@dimen/halfMargin"
+                android:layout_marginTop="@dimen/halfMargin"
+                android:layout_marginEnd="@dimen/halfMargin"
+                app:srcCompat="@drawable/baseline_call_end_24"
+                app:tint="@android:color/white" />
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

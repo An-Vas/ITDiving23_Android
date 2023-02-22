@@ -9,6 +9,7 @@
         android:id="@+id/cardLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/dark_gray"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,33 +20,29 @@
                 android:id="@+id/imageView"
                 android:layout_width="167dp"
                 android:layout_height="155dp"
-                android:background="@drawable/baseline_face_24"
-                android:backgroundTint="@color/black"
+                android:background="@drawable/layer"
                 android:scaleType="fitXY"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:id="@+id/linearLayout5"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@color/gray"
-                app:layout_constraintTop_toBottomOf="@+id/imageView">
+                android:backgroundTint="@color/dark_gray"
+                android:drawableRight="@drawable/baseline_mic_off_24"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="User"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:tint="@android:color/white" />
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:drawableRight="@drawable/baseline_mic_off_24"
-                    android:backgroundTint="@color/dark_gray"
-                    android:text="User" />
-
-            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
