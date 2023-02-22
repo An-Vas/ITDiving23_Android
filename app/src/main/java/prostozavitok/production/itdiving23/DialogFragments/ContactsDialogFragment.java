@@ -1,4 +1,4 @@
-package prostozavitok.production.itdiving23;
+package prostozavitok.production.itdiving23.DialogFragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
+
+import prostozavitok.production.itdiving23.R;
 
 public class ContactsDialogFragment extends DialogFragment {
     @NonNull

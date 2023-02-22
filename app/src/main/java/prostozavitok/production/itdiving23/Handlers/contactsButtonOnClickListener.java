@@ -4,8 +4,7 @@ import android.view.View;
 
 import androidx.fragment.app.FragmentManager;
 
-import prostozavitok.production.itdiving23.ContactsDialogFragment;
-import prostozavitok.production.itdiving23.HelloDialogFragment;
+import prostozavitok.production.itdiving23.DialogFragments.ContactsDialogFragment;
 
 public class contactsButtonOnClickListener implements View.OnClickListener{
     private FragmentManager manager;

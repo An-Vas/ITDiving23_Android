@@ -1,4 +1,4 @@
-package prostozavitok.production.itdiving23;
+package prostozavitok.production.itdiving23.DialogFragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
